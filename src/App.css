@@ -1,0 +1,142 @@
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url(Resources/fonts/ttf/JetBrainsMono-Light.ttf);
+}
+
+@font-face {
+    font-family: "Jetbrains Bold";
+    src: url(Resources/fonts/ttf/JetBrainsMono-Bold.ttf);
+}
+
+
+body {
+    background-color: #262626;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.navbar {
+    width: 100%;
+    height: 5vh;
+    border-bottom: 1px solid #ffffff;
+    display: flex;
+}
+
+.nav-item {
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    border-right: 1px solid #ffffff;
+    font-family: "Jetbrains Bold";
+}
+
+.upgrade {
+    background-color: #262626;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-left: 0;
+    border-top: 0;
+    width: 100%;
+    height: 7vw;
+    display:flex;
+    font-family: "Jetbrains Mono";
+}
+.upgrade-desc {
+    font-size: .8em;
+}
+
+.upgrade-number-container {
+    display: flex;
+    width: 10vh;
+    border: 1px solid #ffffff;
+    border-top: 0;
+    border-bottom: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+
+.upgrade-info-container{
+    width: 100%;
+    padding-left: 1em;
+}
+
+.can-buy {
+    color: #ffffff;
+}
+
+.cannot-buy {
+    color: grey;
+}
+
+.energy-button {
+    width: 100%;
+    height: 10%;
+}
+
+.main-container{
+    display: flex;
+}
+
+.left-container {
+    width: 20vw;
+    height: 90vh;
+    border: 1px solid #ffffff;
+}
+
+.center-container {
+    width: 60vw;
+    height: 90vh;
+    border: 1px solid #ffffff;
+}
+
+.top-container {
+    width: 100vw;
+    height: 10vh;
+    border: 1px solid #ffffff;
+}
+
+.right-container {
+    width: 20vw;
+    height: 90vh;
+    border: 1px solid #ffffff;
+}
+
+.objective {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: 'Jetbrains Mono', ui-sans-serif;
+}
+
+.objective h1 {
+    margin-top: 0;
+    padding-top: 0em;
+    font-weight: 50;
+    font-size: 3.8em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.objective p {
+    padding-top: 0em;
+    font-size: 1.5em;
+    padding-bottom: 0.2em;
+}
+
+.console {
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    font-family: "JetBrains Mono";
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+.resource-panel {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-family: "JetBrains Mono";
+}

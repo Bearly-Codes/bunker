@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.4995cf86.css",
-    "main.js": "/static/js/main.7f1b65ae.js",
-    "static/js/787.fcb2f0f0.chunk.js": "/static/js/787.fcb2f0f0.chunk.js",
-    "static/media/JetBrainsMono-Bold.ttf": "/static/media/JetBrainsMono-Bold.06bb09be120e8b604064.ttf",
-    "static/media/JetBrainsMono-Light.ttf": "/static/media/JetBrainsMono-Light.f0e2261a65c471b3a07f.ttf",
-    "index.html": "/index.html",
-    "main.4995cf86.css.map": "/static/css/main.4995cf86.css.map",
-    "main.7f1b65ae.js.map": "/static/js/main.7f1b65ae.js.map",
-    "787.fcb2f0f0.chunk.js.map": "/static/js/787.fcb2f0f0.chunk.js.map"
+    "main.css": "/bunker/static/css/main.79dea9e8.css",
+    "main.js": "/bunker/static/js/main.13482304.js",
+    "static/js/787.fcb2f0f0.chunk.js": "/bunker/static/js/787.fcb2f0f0.chunk.js",
+    "static/media/JetBrainsMono-Bold.ttf": "/bunker/static/media/JetBrainsMono-Bold.06bb09be120e8b604064.ttf",
+    "static/media/JetBrainsMono-Light.ttf": "/bunker/static/media/JetBrainsMono-Light.f0e2261a65c471b3a07f.ttf",
+    "index.html": "/bunker/index.html",
+    "main.79dea9e8.css.map": "/bunker/static/css/main.79dea9e8.css.map",
+    "main.13482304.js.map": "/bunker/static/js/main.13482304.js.map",
+    "787.fcb2f0f0.chunk.js.map": "/bunker/static/js/787.fcb2f0f0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4995cf86.css",
-    "static/js/main.7f1b65ae.js"
+    "static/css/main.79dea9e8.css",
+    "static/js/main.13482304.js"
   ]
 }

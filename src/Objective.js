@@ -89,18 +89,18 @@ function initializeObjectives(gameData) {
             gameData.messageList.push({
                 name: 'Ten Energy 1',
                 text: '---BOOTING SENTINEL---',
-                delay: 5,
+                delay: 10,
             });
 
             gameData.messagesToSend.push({
                 name: 'Ten Energy 2',
                 text: 'SENTINEL ONLINE',
-                delay: 30,
+                delay: 40,
             });
             gameData.messagesToSend.push({
                 name: 'Ten Energy 3',
                 text: 'Your awareness expands, lights flicker on in the room and long dead servers whir to life',
-                delay: 10,
+                delay: 20,
             });
             gameData.messagesToSend.push({
                 name: 'Ten Energy 4',

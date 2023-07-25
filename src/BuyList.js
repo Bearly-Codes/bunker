@@ -16,7 +16,7 @@ function BuyList({gameData, setGameData}) {
                 <div key={item.name} onClick={() => item.buy(gameData, setGameData, item)}
                      className={`upgrade ${item.canBuy(gameData) ? 'can-buy' : 'cannot-buy'}`}>
                     <div className="upgrade-info-container">
-                        <p>
+                        <p className="upgrade-header">
                             {item.name}: {item.cost}
                         </p>
                         <p className="upgrade-desc">{item.description}</p>

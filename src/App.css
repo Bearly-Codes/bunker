@@ -53,12 +53,13 @@ body {
     border-bottom: 0;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .upgrade-info-container{
     width: 100%;
     padding-left: 1em;
+    padding-right: .5em;
 }
 
 .can-buy {
@@ -131,6 +132,11 @@ body {
     font-family: "JetBrains Mono";
     display: flex;
     flex-direction: column-reverse;
+}
+
+.console-message {
+    padding-left: .5em;
+    padding-right: .5em;
 }
 
 

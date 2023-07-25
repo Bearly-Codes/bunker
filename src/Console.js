@@ -21,7 +21,7 @@ function Console ({gameData}) {
     return (
         <div className="console" ref={consoleRef}>
             {reversedMessages.map((message) => (
-                <div key={message.name}>
+                <div key={message.name} className="console-message">
                     <p>{message.text}</p>
                 </div>
                 ))}

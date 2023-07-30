@@ -1,31 +1,19 @@
 import "./App.css"
 import {useEffect, useRef} from 'react';
 
+
+//TODO: Fix bug with text scrolling past the top of the console
 function Console ({gameData}) {
-    const consoleRef = useRef(null);
-    const reversedMessages = [...gameData.messageList].reverse();
-
-    const handleScroll = (e) => {
-        const container = consoleRef.current;
-        if (container) {
-            container.scrollTop += e.deltaY;
-        }
-    };
-
-    useEffect(() => {
-        const container = consoleRef.current;
-        container.addEventListener('wheel', handleScroll);
-        return () => container.removeEventListener('wheel', handleScroll);
-    }, []);
+    const reversedMessages = gameData.messageList.slice(0).reverse();
 
     return (
-        <div className="console" ref={consoleRef}>
-            {reversedMessages.map((message) => (
-                <div key={message.name} className="console-message">
-                    <p>{message.text}</p>
-                </div>
-                ))}
-        </div>
+            <div className="console">
+                {reversedMessages.map((message) => (
+                    <div key={message.name} className="console-message">
+                        <p>{message.text}</p>
+                    </div>
+                    ))}
+            </div>
     )
 }
 

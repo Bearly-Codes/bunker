@@ -13,14 +13,16 @@ class GameData {
         this.buyList = [];
         this.lockedBuyList = [];
         this.researchList = [];
-        this.lockedResearchList = [];
         this.resourceList = [];
         this.lockedResourceList = [];
         this.messageList = [];
         this.messagesToSend = []; //Used for storing messages to delay parts of messages
         this.objectiveList = [];
         this.navBarList = [];
+        this.lockedNavBarList = [];
         this.activeNavBarElement = -1; //Begins as -1 until unlocked after getting 10 energy
+        this.activeSubBarElement = 0; //Specifically for the nab bar under the nav bar
+        this.gameStage = 0;
 
         initializeResourcePanel(this);
         initializeLists(this);

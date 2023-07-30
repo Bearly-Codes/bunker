@@ -17,7 +17,7 @@ body {
 
 .navbar {
     width: 100%;
-    height: 5vh;
+    height: 4vh;
     border-bottom: 1px solid #ffffff;
     display: flex;
 }
@@ -26,8 +26,18 @@ body {
     width: 10%;
     height: 100%;
     text-align: center;
-    border-right: 1px solid #ffffff;
     font-family: "Jetbrains Bold";
+    color: grey;
+    cursor: pointer;
+    padding: 0 .5em .5em;
+}
+
+.nav-item:hover {
+    color: #d9d9d9;
+}
+
+.selected {
+    color: #ffffff;
 }
 
 .upgrade {
@@ -40,6 +50,7 @@ body {
     height: 7vw;
     display:flex;
     font-family: "Jetbrains Mono";
+    cursor: pointer;
 }
 .upgrade-desc {
     font-size: .8em;
@@ -108,6 +119,7 @@ body {
     height: 100%;
     text-align: center;
     font-family: 'Jetbrains Mono', ui-sans-serif;
+    z-index: 10;
 }
 
 .objective h1 {
@@ -127,12 +139,21 @@ body {
 
 .console {
     width: 100%;
-    height: 90%;
+    height: 100%;
     text-align: center;
     font-family: "JetBrains Mono";
-    display: flex;
-    flex-direction: column-reverse;
+    margin-right: -20px;
+    overflow-y: scroll;
+    font-size: .8em;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
+
+.console::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
 
 .console-message {
     padding-left: .5em;

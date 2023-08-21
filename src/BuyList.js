@@ -1,12 +1,11 @@
 import './App.css'
 import {useEffect, useState} from 'react'
 import {mainNavBar, lockedMainNavBar} from "./NavBarConsts";
-import NavBar from "./NavBar";
+import {NavBar, SubNavBar} from "./NavBar";
 import {buyList} from "./BuyListConsts";
 //ALL UNLOCKING is handled in the NAVBAR, NO UNLOCKING LOGIC IN BUYLIST
 
 const energyIndex = 0;
-
 
 
 //
@@ -17,24 +16,24 @@ function BuyList({gameData, setGameData}) {
         return;
     }
 
-    if(!gameData.buyList[gameData.activeNavBarElement]){
-        return(
+    if (!gameData.buyList[gameData.activeNavBarElement]) {
+        return (
             <div>
                 <p>Err no main element</p>
             </div>
         )
     }
 
-    if(!gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement]){
-        return(
+    if (!gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement]) {
+        return (
             <div>
                 <p>Err no sub element</p>
             </div>
         )
     }
 
-    if(!gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].list){
-        return(
+    if (!gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].list) {
+        return (
             <div>
                 <p>Err no list</p>
             </div>
@@ -45,7 +44,9 @@ function BuyList({gameData, setGameData}) {
     return (
         <div>
             <NavBar gameData={gameData} setGameData={setGameData} elements={gameData.navBarList}/>
-            {gameData.navBarList[gameData.activeNavBarElement].subNavBar && <NavBar gameData={gameData} setGameData={setGameData} elements={gameData.navBarList[gameData.activeNavBarElement].subNavBar}/>}
+            {gameData.navBarList[gameData.activeNavBarElement].subNavBar &&
+                <SubNavBar gameData={gameData} setGameData={setGameData}
+                           elements={gameData.navBarList[gameData.activeNavBarElement].subNavBar}/>}
             {
                 gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].list.map((item) => (
                     gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].display(gameData, setGameData, item)))
@@ -53,7 +54,6 @@ function BuyList({gameData, setGameData}) {
         </div>
     )
 }
-
 
 
 //This unlock method works for when you know the order in which things will be unlocked
@@ -76,11 +76,13 @@ function initializeNavBar(gameData) {
 
 function updateNavBar(gameData) {
     if (gameData.activeNavBarElement !== -1) {
-        while (gameData.lockedNavBarList.length !== 0 && gameData.lockedNavBarList[0].canUnlock(gameData)) {
+        //Some navBar elements don't have canUnlock functions, they'll manually in response to player actions, threshold based unlocks will use canUnlock
+        while (gameData.lockedNavBarList.length !== 0 && gameData.lockedNavBarList[0].canUnlock && gameData.lockedNavBarList[0].canUnlock(gameData)) {
             gameData.navBarList.push(gameData.lockedNavBarList[0]);
             gameData.lockedNavBarList.shift();
         }
-        while (gameData.navBarList[gameData.activeNavBarElement].lockedNavElements.length !== 0 && gameData.navBarList[gameData.activeNavBarElement].lockedNavElements[0].canUnlock(gameData)) {
+        while (gameData.navBarList[gameData.activeNavBarElement].lockedNavElements.length !== 0 && gameData.navBarList[gameData.activeNavBarElement].lockedNavElements[0].canUnlock
+        && gameData.navBarList[gameData.activeNavBarElement].lockedNavElements[0].canUnlock(gameData)) {
             gameData.navBarList[gameData.activeNavBarElement].subNavBar.push(gameData.navBarList[gameData.activeNavBarElement].lockedNavElements[0]);
             gameData.navBarList[gameData.activeNavBarElement].lockedNavElements.shift();
         }
@@ -94,8 +96,9 @@ function updateBuyList(gameData) {
         gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].list.forEach((item) => {
             item.canBuyVar = item.canBuy(gameData, item);
         })
-        while(gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].lockedElements.length !== 0 &&
-            gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].lockedElements[0].canUnlock(gameData)) {
+        //Similar to above, some locked elements don't have canUnlock functions, they're manually unlocked elsewhere in the code
+        while (gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].lockedElements.length !== 0 && gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].lockedElements[0].canUnlock
+        && gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].lockedElements[0].canUnlock(gameData)) {
             gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].list.push(gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].lockedElements[0]);
             gameData.buyList[gameData.activeNavBarElement][gameData.activeSubBarElement].lockedElements.shift();
         }

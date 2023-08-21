@@ -11,4 +11,16 @@ function NavBar({gameData, setGameData, elements}) {
     )
 }
 
-export default NavBar;
+function SubNavBar ({gameData, setGameData, elements}) {
+    return (
+        <div className="navbar">
+            {elements.map((item) => (
+                <div key={item.name} onClick={() => item.onClick(gameData, setGameData, item)} className={`nav-item ${gameData.activeSubBarElement === item.index ? 'selected' : ''}`}>
+                    <p>{item.name}</p>
+                </div>
+            ))}
+        </div>
+    )
+}
+
+export {NavBar, SubNavBar};
